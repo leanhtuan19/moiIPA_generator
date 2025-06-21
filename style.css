@@ -1,0 +1,197 @@
+:root {
+    --background-dark: #1a1a1a;
+    --card-background: rgba(0, 0, 0, 0.3);
+    --text-color: #e0e0e0;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --primary-color: #bb86fc;
+    --primary-hover: #9a67d4;
+    --secondary-color: #03dac6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--background-dark);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background: var(--card-background);
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(20px);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#app-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(118, 118, 128, 0.12);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.25); 
+}
+
+.form-group select {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.generate-btn {
+    background: var(--primary-color);
+    color: white;
+    grid-column: 1 / -1; /* Span full width */
+    margin-top: 10px;
+}
+
+.generate-btn:hover {
+    background: var(--primary-hover);
+}
+
+.reload-btn {
+    background-color: #0d6efd; /* Xanh dương */
+    color: #E91E63; /* Màu hồng */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.reload-btn:hover {
+    background-color: #0b5ed7; /* Xanh dương đậm hơn khi di chuột qua */
+}
+
+#result-container {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+#result-container h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.output-area {
+    position: relative;
+}
+
+.output-area pre {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.copy-btn .fa-check {
+    color: var(--secondary-color);
+}
+
+.moimoi {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background-image: linear-gradient(
+    135deg,
+    #0400ff 0%,
+    #00d9ff 20%,
+    #ff0000 40%,
+    #e5ff00 60%,
+    #2bff00 80%,
+    #0400ff 100%);
+    text-shadow: 0 0 40px #a200ff;
+    background-size: 200% auto;
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+}
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOI IPA Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1 class="moimoi">Moi App Item Code Generator</h1>
+        <p>Nhập thông tin ứng dụng vào các ô bên dưới để tạo mã HTML.</p>
+        
+        <form id="app-form">
+            <div class="form-group">
+                <label for="category">Category (Loại):</label>
+                <select id="category" name="category" required>
+                    <option value="apps" selected>Ứng dụng (apps)</option>
+                    <option value="games">Trò chơi (games)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id">ID (Mã):</label>
+                <input type="number" id="id" name="id" placeholder="e.g., 15" value="1" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name (Tên ứng dụng):</label>
+                <input type="text" id="name" name="name" placeholder="e.g., Instagram" required>
+            </div>
+            <div class="form-group">
+                <label for="version">Version (Phiên bản):</label>
+                <input type="text" id="version" name="version" placeholder="e.g., v3.0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="size">Size (Kích thước):</label>
+                <input type="text" id="size" name="size" placeholder="e.g., 150 MB" required>
+            </div>
+            <div class="form-group">
+                <label for="added">Added Date (Ngày thêm):</label>
+                <input type="date" id="added" name="added" required>
+            </div>
+            <div class="form-group">
+                <label for="icon">Icon URL (Link ảnh icon):</label>
+                <input type="url" id="icon" name="icon" placeholder="https://example.com/icon.png" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description (Mô tả):</label>
+                <textarea id="description" name="description" rows="4" placeholder="Mô tả ngắn về ứng dụng..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="download-link">Download Link (Link tải):</label>
+                <input type="url" id="download-link" name="download-link" placeholder="https://example.com/download" required>
+            </div>
+            
+            <button type="submit" class="btn generate-btn">Tạo mã HTML</button>
+        </form>
+        
+        <div id="result-container" style="display: none;">
+            <button id="reload-btn" class="btn reload-btn">
+                <i class="fas fa-sync-alt"></i> Tải lại trang
+            </button>
+            <h2>Mã HTML đã tạo:</h2>
+            <div class="output-area">
+                <pre><code id="output-code"></code></pre>
+                <button id="copy-btn" class="btn copy-btn">
+                    <i class="far fa-copy"></i> Sao chép
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
